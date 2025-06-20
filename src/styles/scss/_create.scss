@@ -1,0 +1,57 @@
+@use 'variables';
+
+main#create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  gap: variables.$size-border;
+
+  @media #{variables.$media-md} {
+    flex-direction: row;
+    height: calc(100vh - variables.$size-border * 2);
+  }
+
+  .image-container {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: variables.$color-car-background;
+    border-radius: variables.$size-border;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media #{variables.$media-md} {
+      width: 40%;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: variables.$size-border;
+
+      @media #{variables.$media-md} {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+  }
+
+  .form {
+    flex: 1;
+    height: 100%;
+    border-radius: variables.$size-border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: variables.$size-border;
+    }
+  }
+}
