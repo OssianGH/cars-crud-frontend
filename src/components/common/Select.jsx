@@ -2,11 +2,10 @@ export default function Select({
   id,
   label,
   options,
-  error,
-  handleChange,
   value,
+  error,
   icon,
-  disabled = false
+  handleChange,
 }) {
   const optionElements = options.map(({ value, label }) => (
     <option key={value} value={value}>{label}</option>
@@ -19,9 +18,8 @@ export default function Select({
           className={'input'}
           id={id}
           name={id}
-          onChange={handleChange}
           value={value}
-          disabled={disabled}
+          onChange={handleChange}
         >
           <option value='' disabled hidden>{label}</option>
           {optionElements}

@@ -2,10 +2,10 @@ export default function Input({
   id,
   label,
   type,
-  handleChange,
-  error,
   value,
-  icon
+  error,
+  icon,
+  handleChange
 }) {
   return (
     <>
@@ -14,12 +14,12 @@ export default function Input({
           className={'input'}
           id={id}
           name={id}
-          type={type}
-          onChange={handleChange}
-          autoComplete={type === 'text' ? 'off' : undefined}
-          value={value}
           aria-placeholder={label}
           placeholder={label}
+          type={type}
+          value={value}
+          onChange={handleChange}
+          autoComplete={type === 'text' ? 'off' : undefined}
         />
         {icon && <img className='icon' src={icon} alt='Search' />}
       </div>
